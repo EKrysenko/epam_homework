@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Given an array of ints of odd length, return a new array length 3 containing

@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Created by Пользователь on 01.12.2017.

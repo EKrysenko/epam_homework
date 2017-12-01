@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Given an array of ints of odd length, look at the first,

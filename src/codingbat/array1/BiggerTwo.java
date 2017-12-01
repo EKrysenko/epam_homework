@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Start with 2 int arrays, a and b, each length 2.

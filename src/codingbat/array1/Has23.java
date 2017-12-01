@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Given an int array length 2, return true if it contains a 2 or a 3.

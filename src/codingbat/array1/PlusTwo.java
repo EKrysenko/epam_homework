@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.

@@ -1,4 +1,4 @@
-package codingbat.Array1;
+package codingbat.array1;
 
 /**
  * Given 2 arrays of ints, a and b, return true if they have the same first element
