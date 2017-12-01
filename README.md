@@ -8,9 +8,9 @@ TODO:
 * [X] warmUp_1
 * [X] warmUp_2
 * [X] String_1
+* [X] Array_1
 * [ ] String_2
 * [ ] String_3
-* [ ] Array_1
 * [ ] Array_2
 * [ ] Array_3
 * other
