@@ -1,4 +1,4 @@
-# **epam_homework** is a project for learning Java.
+# **homework** is a project for learning Java.
 
 Created for non-commercial use only.
 
@@ -9,7 +9,7 @@ TODO:
 * [X] warmUp_2
 * [X] String_1
 * [X] Array_1
-* [ ] Logic_1 (2 of 30)
+* [ ] Logic_1 (3 of 30)
 * [ ] String_2
 * [ ] String_3
 * [ ] Array_2
