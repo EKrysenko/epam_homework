@@ -10,7 +10,8 @@ TODO:
 * [X] String1
 * [X] Array1
 * [X] Logic1
-* [ ] String2
+* [X] Logic2
+* [X] String2
 * [ ] String3
 * [ ] Array2
 * [ ] Array3
