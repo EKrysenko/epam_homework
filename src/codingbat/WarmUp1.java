@@ -194,7 +194,7 @@ public class WarmUp1 {
      * parrotTrouble(false, 6) → false
      */
     public static boolean parrotTrouble(boolean talking, int hour) {
-        return (20 < hour || hour < 7) && talking;
+        return (7 > hour || hour > 20) && talking;
     }
 
     /**
