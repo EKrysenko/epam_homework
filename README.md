@@ -5,15 +5,15 @@ Created for non-commercial use only.
 ## Task 1: [codingbat.com](http://codingbat.com/done?user=evgeniy.krysenko@yandex.ru&tag=4886278468)
 
 TODO:
-* [X] warmUp_1
-* [X] warmUp_2
-* [X] String_1
-* [X] Array_1
-* [ ] Logic_1 (3 of 30)
-* [ ] String_2
-* [ ] String_3
-* [ ] Array_2
-* [ ] Array_3
+* [X] WarmUp1
+* [X] WarmUp2
+* [X] String1
+* [X] Array1
+* [X] Logic1
+* [ ] String2
+* [ ] String3
+* [ ] Array2
+* [ ] Array3
 * other
 
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)

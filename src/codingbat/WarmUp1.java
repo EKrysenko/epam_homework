@@ -27,7 +27,9 @@ public class WarmUp1 {
      diff21(21) → 0
      */
     public static int diff21(int n){
-        return (n > 21 ? ((n - 21) * 2) : (21 - n));
+        return n > 21
+            ? ((n - 21) * 2)
+            : (21 - n);
     }
 
     /**
@@ -98,7 +100,7 @@ public class WarmUp1 {
      * hasTeen(20, 10, 13) → true
      */
     public static boolean hasTeen(int a, int b, int c){
-        return (a >= 13 && a <= 19) || (b >=13 && b <= 19) || (c >=13 && c <=19 );
+        return isWithin(a, 13, 19) || isWithin(b, 13, 19) || isWithin(c, 13, 19);
     }
 
     /**
@@ -128,13 +130,11 @@ public class WarmUp1 {
     public static int close10(int a, int b){
         int aTo10 = Math.abs(10 - a);
         int bTo10 = Math.abs(10 - b);
-        if (aTo10 < bTo10){
-            return a;
+
+        if (aTo10 == bTo10){
+            return 0;
         }
-        if(aTo10 > bTo10){
-            return b;
-        }
-        return 0;
+        return aTo10 < bTo10 ? a : b;
     }
 
     /**
@@ -152,7 +152,7 @@ public class WarmUp1 {
                 ++count;
             }
         }
-        return (count >= 1 && count <= 3);
+        return isWithin(count, 1, 3);
     }
 
     /**
@@ -193,11 +193,8 @@ public class WarmUp1 {
      * parrotTrouble(true, 7) → false
      * parrotTrouble(false, 6) → false
      */
-    public static boolean parrotTrouble(boolean talking, int hour){
-        if (hour < 7 || hour > 20){
-            return talking;
-        }
-        return false;
+    public static boolean parrotTrouble(boolean talking, int hour) {
+        return (20 < hour || hour < 7) && talking;
     }
 
     /**
@@ -271,7 +268,7 @@ public class WarmUp1 {
     public static boolean loneTeen(int a, int b){
         return isWithin(a, 13, 19) != isWithin(b, 13, 19);
     }
-    private static boolean isWithin(int a, int min, int max){ // Util method returns true if int "a" is in range
+    static boolean isWithin(int a, int min, int max){ // Util method returns true if int "a" is in range
         return min <= a && a <= max;                         //  from "min" to "max" inclusive.
     }
 
@@ -304,7 +301,7 @@ public class WarmUp1 {
      */
     public static boolean in3050(int a, int b){
         return isWithin(a, 30, 40) && isWithin(b, 30, 40) ||
-                isWithin(a, 40, 50) && isWithin(b, 40, 50);
+               isWithin(a, 40, 50) && isWithin(b, 40, 50);
     }
 
     /**
@@ -329,8 +326,9 @@ public class WarmUp1 {
     */
     public static long sumDouble(int a, int b){
         long result = 0L;
-        result = (a != b ? a + b : (a + b) * 2);
-
+        result = (a != b)
+            ? a + b
+            : (a + b) * 2;
         return result;
     }
 
@@ -357,7 +355,7 @@ public class WarmUp1 {
     public static String notString(String str){
         return isStartsNot(str)? str : "not ".concat(str);
     }
-    public static boolean isStartsNot(String str){                    // Util method returns true if "str" lentght
+    private static boolean isStartsNot(String str){                    // Util method returns true if "str" lentght
         return str.length() > 2 && str.substring(0, 3).equals("not"); // more then 2 and first 3 chars equals "not".
     }
 
@@ -373,12 +371,8 @@ public class WarmUp1 {
     public static String front3(String str){
         return getFront(str, 3) + getFront(str, 3) + getFront(str, 3);
     }
-    public static String getFront(String str, int n){  // Util method returns first "n" characters of "str" as String.
-        if (str.length() < n){
-            return str;
-        }else{
-            return str.substring(0, n);
-        }
+    static String getFront(String str, int n){  // Util method returns first "n" characters of "str" as String.
+        return str.length() < n ? str : str.substring(0, n);
     }
 
     /**
@@ -433,9 +427,7 @@ public class WarmUp1 {
      * intMax(3, 2, 1) → 3
      */
     public static int intMax(int a, int b, int c){
-        int max = 0;
-        max = a > b ? a : b;
-        return max > c? max : c;
+        return Math.max(a, Math.max(b, c));
     }
 
     /**

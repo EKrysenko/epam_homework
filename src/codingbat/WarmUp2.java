@@ -73,7 +73,7 @@ public class WarmUp2 {
      */
 
     public static boolean array123(int[] nums) {
-        for (int i = 0; i < nums.length - 2; ++i){
+        for (int i = 0; i + 2 < nums.length; ++i){
             if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3){
                 return true;
             }
@@ -110,7 +110,7 @@ public class WarmUp2 {
      */
     public static boolean noTriples(int[] nums) {
         int count = 0;
-        for(int i = 0; i < nums.length - 1; ++i){
+        for(int i = 0; i + 1 < nums.length; ++i){
             int tmp = nums[i];
             if(nums[i + 1] == tmp){
                 ++count;
@@ -192,7 +192,7 @@ public class WarmUp2 {
             a = b;
             b = tmp;
         }
-        for (int i = 0; i < a.length() - 1; ++i){
+        for (int i = 0; i + 1 < a.length(); ++i){
             String subA = a.substring(i, i + 2);
             String subB = b.substring(i, i + 2);
             if(subA.equals(subB)){
@@ -225,7 +225,7 @@ public class WarmUp2 {
      * has271([2, 7, 1]) → true
      */
     public static boolean has271(int[] nums) {
-        for (int i=0; i < (nums.length-2); i++) {
+        for (int i=0; i + 2 < nums.length; i++) {
             int val = nums[i];
             if (nums[i + 1] == (val + 5) && Math.abs(nums[i + 2] - (val - 1)) <= 2) {
                 return true;
@@ -278,9 +278,7 @@ public class WarmUp2 {
      */
     public static boolean arrayFront9(int[] nums) {
         int area = nums.length;
-        if (area > 4){
-            area = 4;
-        }
+        area = Math.min(area, 4);
         for (int i = 0; i < area; ++i){
             if (nums[i] == 9){
                 return true;
