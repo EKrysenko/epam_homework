@@ -26,9 +26,9 @@ public class String2 {
     public static int countCode(String str) {
         int count = 0;
         for (int i = 0; i + 3 < str.length(); ++i) {
-            if (str.charAt(i) == 'c'     &&
-                str.charAt(i + 1) == 'o' &&
-                str.charAt(i + 3) == 'e') {
+            if (str.charAt(i) == 'c' &&
+                    str.charAt(i + 1) == 'o' &&
+                    str.charAt(i + 3) == 'e') {
                 ++count;
             }
         }
@@ -84,7 +84,7 @@ public class String2 {
      */
     public boolean sameStarChar(String str) {
         for (int i = 1; i + 1 < str.length(); ++i) {
-            if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1)){
+            if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1)) {
                 return false;
             }
         }
@@ -100,7 +100,7 @@ public class String2 {
      * starOut("sm*eilly") → "silly"
      */
     public static String starOut(String str) {
-        int [] index = new int [str.length() + 2];
+        int[] index = new int[str.length() + 2];
         String result = "";
 
         for (int i = 0; i < str.length(); ++i) {
@@ -164,7 +164,7 @@ public class String2 {
      * xyBalance("yaaxbb") → false
      */
     public static boolean xyBalance(String str) {
-        if (str.length() == 1 && str.charAt(0) == 'x' ) {
+        if (str.length() == 1 && str.charAt(0) == 'x') {
             return false;
         }
         int xIndex = 0;
@@ -209,7 +209,7 @@ public class String2 {
         if (str.length() < 3) {
             return false;
         }
-        int middle =  str.length() / 2;
+        int middle = str.length() / 2;
         if (str.length() % 2 != 0) {
             return str.substring(middle - 1, middle + 2).equals("xyz");
         }
@@ -249,8 +249,8 @@ public class String2 {
         int wLen = word.length();
         int pos = 0;
 
-        for(int i = pos; i + wLen <= sLen; i++){
-            if(str.substring(i, i + wLen).equals(word)){
+        for (int i = pos; i + wLen <= sLen; i++) {
+            if (str.substring(i, i + wLen).equals(word)) {
                 result += word;
                 i += wLen - 1;
                 pos += word.length();
@@ -259,7 +259,7 @@ public class String2 {
                 pos++;
             }
         }
-        for(int i = pos; i < str.length(); i++){
+        for (int i = pos; i < str.length(); i++) {
             result += "+";
         }
         return result;

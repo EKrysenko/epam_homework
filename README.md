@@ -8,11 +8,12 @@ TODO:
 * [X] WarmUp1
 * [X] WarmUp2
 * [X] String1
+* [X] String2
 * [X] Array1
 * [X] Logic1
 * [X] Logic2
 * [X] Map1
-* [X] String2
+* [X] Map2
 * [ ] String3
 * [ ] Array2
 * [ ] Array3
