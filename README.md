@@ -14,8 +14,8 @@ TODO:
 * [X] Logic2
 * [X] Map1
 * [X] Map2
-* [ ] String3 (7 of 11)
-* [ ] Array2
+* [X] String3
+* [ ] Array2 
 * [ ] Array3
 * other
 

@@ -19,6 +19,7 @@ public class String3 {
         }
         return count;
     }
+
     private int countLastChars(String str, char y, char z) {
         int count = 0;
         if (str.length() == 0) {
@@ -65,7 +66,7 @@ public class String3 {
      */
     public String sameEnds(String string) {
         int len = string.length();
-        int count = len / 2 ;
+        int count = len / 2;
         while (count > 0 &&
                 !string.substring(0, count).equals(string.substring(len - count, len))) {
             --count;
@@ -88,6 +89,7 @@ public class String3 {
         }
         return sum;
     }
+
     private int findInt(String str) {
         int sum = 0;
         String value = "";
@@ -115,7 +117,7 @@ public class String3 {
         int rLen = remove.length();
 
         for (int i = 0; i < bLen; i++) {
-            if (i + rLen < bLen  + 1 && base.substring(i, i + rLen).toLowerCase().equals(remove.toLowerCase())) {
+            if (i + rLen < bLen + 1 && base.substring(i, i + rLen).toLowerCase().equals(remove.toLowerCase())) {
                 i = i + rLen - 1;
                 continue;
             }
@@ -125,7 +127,7 @@ public class String3 {
     }
 
     /**
-     *We'll say that a "triple" in a string is a char appearing three times in a row.
+     * We'll say that a "triple" in a string is a char appearing three times in a row.
      * Return the number of triples in the given string. The triples may overlap.
      * countTriple("abcXXXabc") → 1
      * countTriple("xxxabyyyycd") → 3
@@ -143,7 +145,7 @@ public class String3 {
     }
 
     /**
-     *Given a string, look for a mirror image (backwards) string at both the beginning and end of the given string.
+     * Given a string, look for a mirror image (backwards) string at both the beginning and end of the given string.
      * In other words, zero or more characters at the very begining of the given string, and at the very
      * end of the string in reverse order (possibly overlapping).
      * mirrorEnds("abXYZba") → "ab"
@@ -152,7 +154,7 @@ public class String3 {
      */
     private String mirrorEnds(String string) {
         int count = 0;
-        int i= 0;
+        int i = 0;
         int len = string.length();
 
         while (i < len) {
@@ -164,6 +166,91 @@ public class String3 {
         return string.substring(0, count);
     }
 
+    /**
+     * Given a string, return a string where every appearance of the lowercase word "is" has been replaced with "is not".
+     * The word "is" should not be immediately preceeded or followed by a letter --
+     * so for example the "is" in "this" does not count.
+     * notReplace("is test") → "is not test"
+     * notReplace("is-is") → "is not-is not"
+     * notReplace("This is right") → "This is not right"
+     */
+    public String notReplace(String str) {
+        String result = "";
 
+        int len = str.length();
+        for (int i = 0; i < len; i++) {
+            if (i - 1 >= 0 && Character.isLetter(str.charAt(i - 1)) ||
+                    i + 2 < len && Character.isLetter(str.charAt(i + 2))) {
+                result += str.charAt(i);
+            } else if (i + 1 < len && str.substring(i, i + 2).equals("is")) {
+                result += "is not";
+                i++;
+            } else result += str.charAt(i);
+        }
+        return result;
+    }
+
+    /**
+     * Given a string, return true if the number of appearances of "is" anywhere in the string
+     * is equal to the number of appearances of "not" anywhere in the string (case sensitive).
+     * equalIsNot("This is not") → false
+     * equalIsNot("This is notnot") → true
+     * equalIsNot("noisxxnotyynotxisi") → true
+     */
+    public boolean equalIsNot(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); ++i) {
+            if (i + 1 < str.length() &&
+                    str.charAt(i) == 'i' &&
+                    str.charAt(i + 1) == 's') {
+                ++count;
+            }
+            if (str.charAt(i) == 'n' &&
+                    str.charAt(i + 1) == 'o' &&
+                    str.charAt(i + 2) == 't') {
+                --count;
+            }
+        }
+        return count == 0;
+    }
+
+    /**
+     * Given a string, return the sum of the digits 0-9 that appear in the string,
+     * ignoring all other characters. Return 0 if there are no digits in the string.
+     * sumDigits("aa1bc2d3") → 6
+     * sumDigits("aa11b33") → 8
+     * sumDigits("Chocolate") → 0
+     */
+    public int sumDigits(String str) {
+        int sum = 0;
+
+        for (int i = 0; i < str.length(); ++i) {
+            if (Character.isDigit(str.charAt(i))) {
+                sum += Integer.parseInt("" + str.charAt(i));
+            }
+        }
+        return sum;
+    }
+
+    /**
+     * Given a string, return the length of the largest "block" in the string.
+     * A block is a run of adjacent chars that are the same.
+     * maxBlock("hoopla") → 2
+     * maxBlock("abbCCCddBBBxx") → 3
+     * maxBlock("") → 0
+     */
+    public int maxBlock(String str) {
+        int count = 0;
+        int tmp = 1;
+        for (int i = 0; i + 1 < str.length(); ++i) {
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                ++tmp;
+            } else {
+                tmp = 1;
+            }
+            count = Math.max(count, tmp);
+        }
+        return count;
+    }
 
 }
