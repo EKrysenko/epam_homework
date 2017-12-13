@@ -243,5 +243,185 @@ public class Array2 {
         return strings;
     }
 
+    /**
+     * Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array.
+     * bigDiff([10, 3, 5, 6]) → 7
+     * bigDiff([7, 2, 10, 9]) → 8
+     * bigDiff([2, 10, 7, 2]) → 8
+     */
+    public int bigDiff(int[] nums) {
+        int min = nums[0];
+        int max = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            max = Math.max(max, nums[i]);
+            min = Math.min(min, nums[i]);
+        }
+        return max - min;
+    }
+
+    /**
+     * Return the sum of the numbers in the array, except ignore sections of numbers starting with
+     * a 6 and extending to the next 7 (every 6 will be followed by at least one 7). Return 0 for no numbers.
+     * sum67([1, 2, 2]) → 5
+     * sum67([1, 2, 2, 6, 99, 99, 7]) → 5
+     * sum67([1, 1, 6, 7, 2]) → 4
+     */
+    public int sum67(int[] nums) {
+        int sum = 0;
+        boolean noCount = false;
+        for (int num : nums) {
+            if (noCount) {
+                if (num == 7)
+                    noCount = false;
+            } else if (num == 6)
+                noCount = true;
+            else
+                sum += num;
+        }
+        return sum;
+    }
+
+    /**
+     * Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
+     * sum28([2, 3, 2, 2, 4, 2]) → true
+     * sum28([2, 3, 2, 2, 4, 2, 2]) → false
+     * sum28([1, 2, 3, 4]) → false
+     */
+    public boolean sum28(int[] nums) {
+        int sum = 0;
+        for (int num : nums) {
+            if (num == 2) {
+                sum += num;
+            }
+        }
+        return sum == 8;
+    }
+
+    /**
+     * Given an array of ints, return true if every element is a 1 or a 4.
+     * only14([1, 4, 1, 4]) → true
+     * only14([1, 4, 2, 4]) → false
+     * only14([1, 1]) → true
+     */
+    public boolean only14(int[] nums) {
+        for (int num : nums) {
+            if (num != 1 && num != 4) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array,
+     * at least one of the pair is that value. Return true if the given value is everywhere in the array.
+     * isEverywhere([1, 2, 1, 3], 1) → true
+     * isEverywhere([1, 2, 1, 3], 2) → false
+     * isEverywhere([1, 2, 1, 3, 4], 1) → false
+     */
+    public boolean isEverywhere(int[] nums, int val) {
+        for (int i = 0; i + 1 < nums.length; ++i) {
+            if (nums[i] != val && nums[i + 1] != val) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Given an array of ints, return true if the array contains two 7's next to each other,
+     * or there are two 7's separated by one element, such as with {7, 1, 7}.
+     * has77([1, 7, 7]) → true
+     * has77([1, 7, 1, 7]) → true
+     * has77([1, 7, 1, 1, 7]) → false
+     */
+    public boolean has77(int[] nums) {
+        for(int i = 0; i < nums.length - 1; i++) {
+
+            if(nums[i] == 7 && nums[i+1] == 7)
+                return true;
+
+            if(i <= nums.length - 3 && nums[i] == 7 && nums[i+2] == 7)
+                return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no 3's are next to each other.
+     * haveThree([3, 1, 3, 1, 3]) → true
+     * haveThree([3, 1, 3, 3]) → false
+     * haveThree([3, 4, 3, 3, 4]) → false
+     */
+    public boolean haveThree(int[] nums) {
+        int count = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            if (i + 1 < nums.length &&
+                nums[i] == 3 && nums[i + 1] == 3) {
+                return false;
+            }
+            if (nums[i] == 3) {
+                ++count;
+            }
+        }
+        return count == 3;
+    }
+
+    /**
+     * Return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.
+     * tripleUp([1, 4, 5, 6, 2]) → true
+     * tripleUp([1, 2, 3]) → true
+     * tripleUp([1, 2, 4]) → false
+     */
+    public boolean tripleUp(int[] nums) {
+        for (int i = 0; i + 2 < nums.length ; ++i) {
+            if (nums[i] + 1 == nums[i + 1] &&
+                nums[i + 1] + 1 == nums[i + 2]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * For each multiple of 10 in the given array, change all the values following it to be that multiple of 10,
+     * until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2, 10, 10, 10, 20, 20}.
+     * tenRun([2, 10, 3, 4, 20, 5]) → [2, 10, 10, 10, 20, 20]
+     * tenRun([10, 1, 20, 2]) → [10, 10, 20, 20]
+     * tenRun([10, 1, 9, 20]) → [10, 10, 10, 20]
+     */
+    public int[] tenRun(int[] nums) {
+        for (int i = 0; i + 1 < nums.length; i++) {
+            if (nums[i] % 10 == 0) {
+                if (nums[i + 1] % 10 != 0) {
+                    nums[i + 1] = nums[i];
+                }
+            }
+        }
+        return nums;
+    }
+
+    /**
+     * We'll say that an element in an array is "alone" if there are values before and after it,
+     * and those values are different from it. Return a version of the given array where every instance
+     * of the given value which is alone is replaced by whichever value to its left or right is larger.
+     * notAlone([1, 2, 3], 2) → [1, 3, 3]
+     * notAlone([1, 2, 3, 2, 5, 2], 2) → [1, 3, 3, 5, 5, 2]
+     * notAlone([3, 4], 3) → [3, 4]
+     */
+    public int[] notAlone(int[] nums, int val) {
+        if (nums.length < 3) {
+            return nums;
+        }
+
+        for (int i = 1; i + 1 < nums.length; ++i) {
+            if (nums[i] == val && nums[i - 1] != val && nums[i + 1] != val) {
+                nums[i] = Math.max(nums[i - 1], nums[i + 1]);
+            }
+        }
+        return nums;
+    }
+
 
 }
