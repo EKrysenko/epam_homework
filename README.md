@@ -16,7 +16,7 @@ TODO:
 * [X] Map2
 * [X] String3
 * [X] Array2
-* [ ] Array3
+* [ ] Array3 (3 of 9)
 * other
 
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
