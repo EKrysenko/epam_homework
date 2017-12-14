@@ -15,7 +15,7 @@ TODO:
 * [X] Map1
 * [X] Map2
 * [X] String3
-* [ ] Array2 (22 of 34)
+* [X] Array2
 * [ ] Array3
 * other
 
