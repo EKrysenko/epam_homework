@@ -16,8 +16,10 @@ TODO:
 * [X] Map2
 * [X] String3
 * [X] Array2
-* [ ] Array3 (3 of 9)
-* other
+* [X] Array3
+* [ ] AP-1
+* [ ] Recurcion1
+* [ ] Recurcion2
 
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
  
