@@ -101,7 +101,7 @@ public class Recursion1 {
     }
 
     /**
-     *Given a string, compute recursively a new string where identical chars that
+     * Given a string, compute recursively a new string where identical chars that
      * are adjacent in the original string are separated from each other by a "*".
      * pairStar("hello") → "hel*lo"
      * pairStar("xxyy") → "x*xy*y"
@@ -136,14 +136,14 @@ public class Recursion1 {
      * countHi2("xhixhi") → 0
      */
     public int countHi2(String str) {
-        if (str.length()<=1) {
+        if (str.length() <= 1) {
             return 0;
         }
-        if (str.length()>2 && str.substring(0,3).equals("xhi")) {
+        if (str.length() > 2 && str.substring(0, 3).equals("xhi")) {
             return countHi2(str.substring(3));
         }
-        if (str.substring(0,2).equals("hi")) {
-            return 1+countHi2(str.substring(2));
+        if (str.substring(0, 2).equals("hi")) {
+            return 1 + countHi2(str.substring(2));
         }
         return countHi2(str.substring(1));
     }
@@ -208,11 +208,11 @@ public class Recursion1 {
      * count8(8818) → 4
      */
     public int count8(int n) {
-        if(n <= 0){
+        if (n <= 0) {
             return 0;
         }
-        if(n % 10 == 8){
-            if((n / 10) % 10 == 8) {
+        if (n % 10 == 8) {
+            if ((n / 10) % 10 == 8) {
                 return 2 + count8(n / 10);
             } else {
                 return 1 + count8(n / 10);
@@ -268,7 +268,7 @@ public class Recursion1 {
         if (index + 1 >= nums.length) {
             return false;
         }
-        if (nums[index+1] == 10 * nums[index]) {
+        if (nums[index + 1] == 10 * nums[index]) {
             return true;
         }
         return array220(nums, index + 1);
@@ -317,14 +317,14 @@ public class Recursion1 {
      */
     public String parenBit(String str) {
         int len = str.length();
-        if(str.charAt(0) == '(' &&
+        if (str.charAt(0) == '(' &&
                 str.charAt(len - 1) == ')') {
             return str;
         }
-        if(str.charAt(0) == '(') {
+        if (str.charAt(0) == '(') {
             return parenBit(str.substring(0, len - 1));
         }
-        if(str.charAt(len - 1) == ')') {
+        if (str.charAt(len - 1) == ')') {
             return parenBit(str.substring(1));
         }
         return parenBit(str.substring(1, len - 1));
@@ -436,11 +436,83 @@ public class Recursion1 {
      * allStar("ab") → "a*b"
      */
     public String allStar(String str) {
-        return str;
+        if (str.length() <= 1) {
+            return str;
+        }
+        return str.charAt(0) + "*" + allStar(str.substring(1));
     }
 
+    /**
+     * We'll say that a "pair" in a string is two instances of a char separated by a char.
+     * So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x.
+     * Recursively compute the number of pairs in the given string.
+     * countPairs("axa") → 1
+     * countPairs("axax") → 2
+     * countPairs("axbx") → 1
+     */
+    public int countPairs(String str) {
+        if (str.length() <= 2) {
+            return 0;
+        }
+        if (str.charAt(0) == str.charAt(2)) {
+            return 1 + countPairs(str.substring(1));
+        }
+        return countPairs(str.substring(1));
+    }
 
+    /**
+     * Given a string, return recursively a "cleaned" string where adjacent chars
+     * that are the same have been reduced to a single char. So "yyzzza" yields "yza".
+     * stringClean("yyzzza") → "yza"
+     * stringClean("abbbcdd") → "abcd"
+     * stringClean("Hello") → "Helo"
+     */
+    public String stringClean(String str) {
+        if (str.length() <= 1) {
+            return str;
+        }
+        if (str.charAt(0) == str.charAt(1)) {
+            return stringClean(str.substring(1));
+        }
+        return str.charAt(0) + stringClean(str.substring(1));
+    }
 
+    /**
+     * Given a string, return true if it is a nesting of zero or more pairs of parenthesis,
+     * like "(())" or "((()))". Suggestion: check the first and last chars, and then recur on what's inside them.
+     * nestParen("(())") → true
+     * nestParen("((()))") → true
+     * nestParen("(((x))") → false
+     */
+    public boolean nestParen(String str) {
+        int len = str.length();
+        if (len == 0) {
+            return true;
+        }
+        int count = 0;
+        return str.charAt(0) == '(' && str.charAt(len - 1) == ')' && nestParen(str.substring(1, len - 1));
+    }
 
+    /**
+     * Given a string and a non-empty substring sub, compute recursively the
+     * largest substring which starts and ends with sub and return its length.
+     * strDist("catcowcat", "cat") → 9
+     * strDist("catcowcat", "cow") → 3
+     * strDist("cccatcowcatxx", "cat") → 9
+     */
+    public int strDist(String str, String sub) {
+        int strLength = str.length();
+        int subLength = sub.length();
+        if (strLength < subLength) {
+            return 0;
+        }
+        if (str.substring(0, subLength).equals(sub)) {
+            if (str.substring(strLength - subLength, strLength).equals(sub)) {
+                return strLength;
+            }
+            return strDist(str.substring(0, strLength - 1), sub);
+        }
+        return strDist(str.substring(1), sub);
+    }
 
 }

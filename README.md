@@ -18,7 +18,7 @@ TODO:
 * [X] Array2
 * [X] Array3
 * [X] AP-1
-* [ ] Recurcion1 (25 of 30)
+* [X] Recurcion1
 * [ ] Recurcion2
 
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
