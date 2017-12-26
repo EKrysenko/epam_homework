@@ -1,5 +1,6 @@
 package hackerrank;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Introduction {
@@ -101,7 +102,7 @@ public class Introduction {
         }
     }
 
-    public static void loops2(String []argh){
+    public static void loops2(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for (int i = 0; i < t; ++i) {
@@ -109,7 +110,7 @@ public class Introduction {
             int b = in.nextInt();
             int n = in.nextInt();
             for (int j = 0; j < n; ++j) {
-                a += (int)Math.pow(2, j) * b;
+                a += (int) Math.pow(2, j) * b;
                 System.out.print(a + " ");
             }
             System.out.println();
@@ -117,7 +118,91 @@ public class Introduction {
         in.close();
     }
 
+    public static void dataTypes(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        for (int i = 0; i < t; ++i) {
+            try {
+                long x = sc.nextLong();
+                System.out.println(x + " can be fitted in:");
+                if (Byte.MIN_VALUE <= x && x <= Byte.MAX_VALUE) {
+                    System.out.println("* byte");
+                }
+                if (Short.MIN_VALUE <= x && x <= Short.MAX_VALUE) {
+                    System.out.println("* short");
+                }
+                if (Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE) {
+                    System.out.println("* int");
+                }
+                if (Long.MIN_VALUE <= x && x <= Long.MAX_VALUE) {
+                    System.out.println("* long");
+                }
+            } catch (Exception e) {
+                System.out.println(sc.next() + " can't be fitted anywhere.");
+            }
+
+        }
+    }
+
+    public static void endOfFile(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = 1;
+        while (sc.hasNext()) {
+            System.out.println(n + " " + sc.nextLine());
+            ++n;
+        }
+    }
+
+    /**
+     * Java Static Initializer Block
+     */
+    static boolean flag = true;
+    static Scanner in = new Scanner(System.in);
+    static int B = in.nextInt();
+    static int H = in.nextInt();
+
+    static {
+        if (B > 0 && H > 0)
+            flag = true;
+        else {
+            flag = false;
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+        }
+    }
+
+    public static void calculateAreaOfParallelogram(String[] args) {
+        if (flag) {
+            int area = B * H;
+            System.out.print(area);
+        }
+    }
+
+    /**
+     * You are given an integer n, you have to convert it into a string.
+     * Please complete the partially completed code in the editor. If your code successfully converts n
+     * into a string s the code will print "Good job". Otherwise it will print "Wrong answer".
+     * can range between -100 to 100 inclusive.
+     */
+    public static void intToString(String[] args) {
+        int n = new Scanner(System.in).nextInt();
+        String s = String.valueOf(n);
+        System.out.println(s);
+    }
+
+    public static String getDay(String day, String month, String year) {
+        final String[] DAYS = {"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"};
+        int yearInt = Integer.valueOf(year);
+        int monthInt = Integer.valueOf(month) - 1;
+        int dayInt = Integer.valueOf(day);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(yearInt, monthInt, dayInt);
+        return DAYS[calendar.get(Calendar.DAY_OF_WEEK) - 1];
+    }
 
 
 }
+
+

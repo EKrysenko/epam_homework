@@ -264,10 +264,7 @@ public class String1 {
         if (len > 2 && str.substring(0, 3).equals("bad")){
             return true;
         }
-        if (len > 3 && str.substring(1, 4).equals("bad")){
-            return true;
-        }
-        return false;
+        return len > 3 && str.substring(1, 4).equals("bad");
     }
 
     /**
