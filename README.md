@@ -2,7 +2,7 @@
 
 Created for non-commercial use only.
 
-## Task 1: [codingbat.com](http://codingbat.com/done?user=evgeniy.krysenko@yandex.ru&tag=4886278468)
+## Task 1 complete: [codingbat.com](http://codingbat.com/done?user=evgeniy.krysenko@yandex.ru&tag=4886278468)
 
 TODO:
 * [X] WarmUp1
@@ -19,15 +19,15 @@ TODO:
 * [X] Array3
 * [X] AP-1
 * [X] Recurcion1
-* [ ] Recurcion2
+* [X] Recurcion2
 
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
  
 TODO:
-* [ ] Welcome to Java!
-* [ ] Java Stdin and Stdout I
-* [ ] Java If-Else
-* [ ] Java Stdin and Stdout II
-* [ ] Java Output Formatting
-* [ ] Java Loops I
-* other 
+* [ ] Introduction (7 of 13)
+* [ ] Strings
+* [ ] BigNumber
+* [ ] Data Structures
+* [ ] Object Oriented Programming
+* [ ] Exception Handling
+* [ ] Advanced
