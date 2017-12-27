@@ -24,7 +24,7 @@ TODO:
 ## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
  
 TODO:
-* [ ] Introduction (12 of 13)
+* [X] Introduction
 * [ ] Strings
 * [ ] BigNumber
 * [ ] Data Structures
