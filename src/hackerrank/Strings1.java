@@ -2,6 +2,8 @@ package hackerrank;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class Strings1 {
 
@@ -40,7 +42,6 @@ public class Strings1 {
         return smallest + "\n" + largest;
     }
 
-    
     public static void stringReverse(String[] args) {
         Scanner sc = new Scanner(System.in);
         String A = sc.next();
@@ -72,6 +73,38 @@ public class Strings1 {
         Arrays.sort(bAsArray);
 
         return Arrays.equals(aAsArray,bAsArray);
+    }
+
+
+    public static void stringTokens(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        s = s.trim();
+        if (s.length() == 0) {
+            System.out.println("0");
+            return;
+        }
+        String[] strings = s.split("[^a-zA-Z]+");
+        System.out.println(strings.length);
+        for (String str : strings) {
+            System.out.println(str);
+        }
+        scan.close();
+    }
+
+    public static void patternSyntaxChecker(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int testCases = Integer.parseInt(in.nextLine());
+        while (testCases > 0) {
+            String pattern = in.nextLine();
+            try {
+                Pattern.compile(pattern);
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+            --testCases;
+        }
     }
 
 }
