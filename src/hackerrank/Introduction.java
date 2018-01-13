@@ -12,7 +12,7 @@ public class Introduction {
      * Complete the main method by copying the two lines of code below and pasting them
      * inside the body of your main method.
      */
-    public static void welcome(String[] args) {
+    public static void welcome() {
         System.out.println("Hello, World.");
         System.out.println("Hello, Java.");
     }
@@ -22,7 +22,7 @@ public class Introduction {
      * Each integer must be printed on a new line.
      * To make the problem a little easier, a portion of the code is provided for you in the editor below.
      */
-    public static void stdInStdOut1(String[] args) {
+    public static void stdInStdOut1() {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
@@ -39,7 +39,7 @@ public class Introduction {
      * If n is even and greater than 20, print Not Weird
      * Complete the stub code provided in your editor to print whether or not n is weird.
      */
-    public static void ifElse(String[] args) {
+    public static void ifElse() {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -64,7 +64,7 @@ public class Introduction {
      * then print the values according to the instructions in the Output Format section below.
      * To make the problem a little easier, a portion of the code is provided for you in the editor.
      */
-    public static void stdInStdOut2(String[] args) {
+    public static void stdInStdOut2() {
         Scanner scan = new Scanner(System.in);
         int i = scan.nextInt();
         double d = scan.nextDouble();
@@ -82,7 +82,7 @@ public class Introduction {
      * To get you started, a portion of the solution is provided for you in the editor; you must format
      * and print the input to complete the solution.
      */
-    public static void outputFormatting(String[] args) {
+    public static void outputFormatting() {
         Scanner sc = new Scanner(System.in);
         System.out.println("================================");
         for (int i = 0; i < 3; i++) {
@@ -96,7 +96,7 @@ public class Introduction {
     /**
      * In this challenge, we're going to use loops to help us do some simple math.
      */
-    public static void loops1(String[] args) {
+    public static void loops1() {
         Scanner in = new Scanner(System.in);
         final int N = in.nextInt();
         for (int i = 1; i <= 10; ++i) {
@@ -104,7 +104,7 @@ public class Introduction {
         }
     }
 
-    public static void loops2(String[] args) {
+    public static void loops2() {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for (int i = 0; i < t; ++i) {
@@ -120,7 +120,7 @@ public class Introduction {
         in.close();
     }
 
-    public static void dataTypes(String[] args) {
+    public static void dataTypes() {
 
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -148,7 +148,7 @@ public class Introduction {
         }
     }
 
-    public static void endOfFile(String[] args) {
+    public static void endOfFile() {
         Scanner sc = new Scanner(System.in);
         int n = 1;
         while (sc.hasNext()) {
@@ -174,7 +174,7 @@ public class Introduction {
         }
     }
 
-    public static void calculateAreaOfParallelogram(String[] args) {
+    public static void calculateAreaOfParallelogram() {
         if (flag) {
             int area = B * H;
             System.out.print(area);
@@ -187,7 +187,7 @@ public class Introduction {
      * into a string s the code will print "Good job". Otherwise it will print "Wrong answer".
      * can range between -100 to 100 inclusive.
      */
-    public static void intToString(String[] args) {
+    public static void intToString() {
         int n = new Scanner(System.in).nextInt();
         String s = String.valueOf(n);
         System.out.println(s);
@@ -204,7 +204,7 @@ public class Introduction {
         return DAYS[calendar.get(Calendar.DAY_OF_WEEK) - 1];
     }
 
-    public static void currencyFormatting(String[] args) {
+    public static void currencyFormatting() {
         Scanner scanner = new Scanner(System.in);
         double payment = scanner.nextDouble();
         scanner.close();

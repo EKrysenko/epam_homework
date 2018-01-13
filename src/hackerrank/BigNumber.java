@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BigNumber {
 
-    public static void bigInteger(String[] args) {
+    public static void bigInteger() {
         Scanner sc = new Scanner(System.in);
         BigInteger a = sc.nextBigInteger();
         BigInteger b = sc.nextBigInteger();
@@ -16,7 +16,7 @@ public class BigNumber {
         System.out.println(a.multiply(b));
     }
 
-    public static void bigDecimal(String[] args) {
+    public static void bigDecimal() {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         String[] s = new String[n];
@@ -40,7 +40,7 @@ public class BigNumber {
 
     }
 
-    public static void primality(String[] args) {
+    public static void primality() {
         Scanner in = new Scanner(System.in);
         BigInteger n = in.nextBigInteger();
         in.close();

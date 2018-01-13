@@ -8,7 +8,7 @@ import java.util.regex.PatternSyntaxException;
 
 public class Strings1 {
 
-    public static void stringIntroduction(String[] args) {
+    public static void stringIntroduction() {
 
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
@@ -22,7 +22,7 @@ public class Strings1 {
         System.out.println(A + " " + B);
     }
 
-    public static void subString(String[] args) {
+    public static void subString() {
         Scanner in = new Scanner(System.in);
         String S = in.next();
         int start = in.nextInt();
@@ -43,7 +43,7 @@ public class Strings1 {
         return smallest + "\n" + largest;
     }
 
-    public static void stringReverse(String[] args) {
+    public static void stringReverse() {
         Scanner sc = new Scanner(System.in);
         String A = sc.next();
         System.out.println(A.equals(reverse(A, A.length() - 1)) ? "Yes" : "No");
@@ -57,7 +57,7 @@ public class Strings1 {
     }
 
 
-    public static void anagrams(String[] args) {
+    public static void anagrams() {
 
         Scanner scan = new Scanner(System.in);
         String a = scan.next();
@@ -77,7 +77,7 @@ public class Strings1 {
     }
 
 
-    public static void stringTokens(String[] args) {
+    public static void stringTokens() {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         s = s.trim();
@@ -93,7 +93,7 @@ public class Strings1 {
         scan.close();
     }
 
-    public static void patternSyntaxChecker(String[] args) {
+    public static void patternSyntaxChecker() {
         Scanner in = new Scanner(System.in);
         int testCases = Integer.parseInt(in.nextLine());
         while (testCases > 0) {
@@ -118,7 +118,7 @@ public class Strings1 {
         }
     }
 
-    public static void duplicateWords(String[] args) {
+    public static void duplicateWords() {
 
         String regex = "\\b(\\w+)(\\W+\\1\\b)+";
         Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
@@ -148,7 +148,7 @@ public class Strings1 {
         public static final String regularExpression="[a-zA-Z][a-zA-Z0-9_]{7,29}$";
     }
 
-    public static void tagContentExtractor(String[] args){
+    public static void tagContentExtractor(){
         Scanner scan = new Scanner(System.in);
         int testCases = Integer.parseInt(scan.nextLine());
 
