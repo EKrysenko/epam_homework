@@ -27,7 +27,7 @@ TODO:
 * [X] Introduction
 * [X] Strings
 * [X] BigNumber
-* [ ] Data Structures (8 of 15)
+* [X] Data Structures
 * [ ] Object Oriented Programming
 * [ ] Exception Handling
 * [ ] Advanced
