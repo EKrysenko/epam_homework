@@ -28,6 +28,6 @@ TODO:
 * [X] Strings
 * [X] BigNumber
 * [X] Data Structures
-* [ ] Object Oriented Programming
-* [ ] Exception Handling
+* [X] Object Oriented Programming 
+* [X] Exception Handling
 * [ ] Advanced
