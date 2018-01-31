@@ -21,7 +21,7 @@ TODO:
 * [X] Recurcion1
 * [X] Recurcion2
 
-## Task: [hackerrank.com](https://www.hackerrank.com/domains/java/java-introduction/1)
+## Task 2 complete: [hackerrank.com](https://www.hackerrank.com/evgeniy_krysenko)
  
 TODO:
 * [X] Introduction
@@ -30,4 +30,4 @@ TODO:
 * [X] Data Structures
 * [X] Object Oriented Programming 
 * [X] Exception Handling
-* [ ] Advanced
+
