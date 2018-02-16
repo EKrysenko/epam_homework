@@ -1,6 +1,6 @@
-# **homework** is a project for learning Java.
+# **homework** is a project for learning Java. All tasks completed.
 
-Created for non-commercial use only.
+Created for non-commercial use only. 
 
 ## Task 1 complete: [codingbat.com](http://codingbat.com/done?user=evgeniy.krysenko@yandex.ru&tag=4886278468)
 
@@ -30,4 +30,4 @@ TODO:
 * [X] Data Structures
 * [X] Object Oriented Programming 
 * [X] Exception Handling
-
+* [X] Advanced
